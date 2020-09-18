@@ -19,7 +19,7 @@ class LIVES(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         # Diminuindo o tamanho da imagem.
-        self.image = pygame.transform.scale(lives_img, (35, 40))
+        self.image = pygame.transform.scale(lives_img, (80, 80))
        
         
 #        # Deixando transparente.
@@ -29,9 +29,9 @@ class LIVES(pygame.sprite.Sprite):
         self.rect = self.image.get_rect() 
         
         # Sorteia um lugar inicial em x
-        self.rect.left = 300
+        self.rect.left = 240
         # Sorteia um lugar inicial em y
-        self.rect.bottom = 600  
+        self.rect.bottom = 160  
 
         # Sorteia uma velocidade inicial
         self.speedx = 0
@@ -39,10 +39,14 @@ class LIVES(pygame.sprite.Sprite):
         
         # Melhora a colisÃ£o estabelecendo um raio de um circulo
         self.radius = int(self.rect.width * .85 / 2)
-        
-    # Metodo que atualiza a posiÃ§Ã£o do meteoro
+    
     def update(self):        
         # Se o tiro passar do inicio da tela, morre.
 #        if self.rect.bottom < 0:
             #self.kill()
+        def movimento_absoluto(self,eixoX, eixoY):
+    #personagem.kill()
+            self.rect.left += 80*eixoX 
+            self.rect.bottom += 80*eixoX     
+    # Metodo que atualiza a posiÃ§Ã£o do meteoro
         pass
